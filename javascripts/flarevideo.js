@@ -221,7 +221,7 @@ for (var i=0; i < events.length; i++) {
 // Private methods
 
 FlareVideo.fn.triggerReady = function(){
-  for (var i in this.readyList) {
+  for (var i = 0; i < this.readyList.length; i++) {
 		this.readyList[i].call(this);
 	}
 	this.loaded = true;
@@ -268,7 +268,7 @@ FlareVideo.fn.setupNative = function(){
   
   this.video.loadSources = function(srcs){
     self.videoElement.empty();
-    for (var i in srcs) {
+    for (var i = 0; i < srcs.length; i++) {
       var srcEl = $("<source />");
       srcEl.attr(srcs[i]);
       self.videoElement.append(srcEl);
@@ -364,7 +364,7 @@ FlareVideo.fn.fixExternalInterface = function(){
   var methods = ["loadSource", "getStartTime", "getCurrentTime", 
                  "setCurrentTime", "getEndTime", "getVolume", 
                  "setVolume", "play", "pause"];
-  for(var i in methods)
+  for(var i = 0; i < methods.length; i++)
     __flash__addCallback(this.video, methods[i]);
 };
 
