@@ -281,7 +281,7 @@ FlareVideo.fn.setupNative = function(){
     if (this.duration == Infinity && this.buffered) {
       return(this.buffered.end(this.buffered.length-1));
     } else {
-      return((this.startTime || 0) + this.duration);
+      return((this.startTime || 0) + (this.duration || 0));
     }
   };
   
