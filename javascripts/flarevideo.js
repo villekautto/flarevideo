@@ -635,7 +635,7 @@ FlareVideo.fn.setupEvents = function(){
     this.controls.removeClass("disabled");
   }, this));
   
-  if (this.options.keyShortcut);
+  if (this.options.keyShortcut) {
     $(document).keydown($.proxy(function(e){
       if (e.keyCode == 32) { // Space
         this.togglePlay();
@@ -649,6 +649,7 @@ FlareVideo.fn.setupEvents = function(){
       }
       
     }, this));
+  }
 };
 
 $.fn.flareVideo = function(options, callback){
